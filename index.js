@@ -22,13 +22,6 @@ try {
     configs: configGroup,
   };
 
-  // main
-  ipDiscovery().then((data) => {
-    core.setOutput("server", data.server);
-    core.setOutput("telemetry", data.telemetry);
-    core.setOutput("configs", data.configs);
-  });
-
   const getTaskLists = async (cluster) => {
     return ecs.listTasks({ cluster: cluster }).promise();
   };
@@ -96,6 +89,15 @@ try {
 
     return data.NetworkInterfaces[0].PrivateIpAddresses[0].Association.PublicIp;
   }
+
+  // main
+  ipDiscovery()
+    .then((data) => {
+      core.setOutput("server", data.server);
+      core.setOutput("telemetry", data.telemetry);
+      core.setOutput("configs", data.configs);
+    })
+    .catch((error) => core.setFailed(error.message));
 } catch (error) {
   core.setFailed(error.message);
 }
