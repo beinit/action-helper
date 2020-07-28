@@ -1,0 +1,33 @@
+name: "Fargate helper action"
+description: "Fetch public id of tasks on Fargate"
+inputs:
+  cluster: # id of input
+    description: "Cluster arn"
+    required: true
+    default: ""
+  region:
+    description: "AWS region"
+    required: true
+    default: "us-east-2"
+  serverGroup:
+    description: "Server task group matcher"
+    required: true
+    default: "platform-qa"
+  telemetryGroup:
+    description: "Telemetry task group matcher"
+    required: true
+    default: "platform-qa"
+  configGroup:
+    description: "Config task group matcher"
+    required: true
+    default: "Dola-config"
+outputs:
+  server: # id of output
+    description: "Ip of the server task"
+  telemetry:
+    description: "Ip of the telemetry task"
+  configs:
+    description: "Ip of the config task"
+runs:
+  using: "node12"
+  main: "dist/index.js"

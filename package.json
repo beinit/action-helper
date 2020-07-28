@@ -1,0 +1,24 @@
+{
+  "name": "fargate-helper-action",
+  "version": "1.0.0",
+  "description": "This action queries AWS Fargate tasks of an specific cluster and returns the public ip of the tasks",
+  "main": "index.js",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "aws-sdk": "^2.721.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "ncc build index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beinit/action-helper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beinit/action-helper/issues"
+  },
+  "homepage": "https://github.com/beinit/action-helper#readme"
+}
