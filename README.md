@@ -21,4 +21,4 @@ This action queries AWS Fargate tasks of an specific cluster and returns the pub
 - telemetry: telemetry ip
 - configs: config ip
 
-## Example usage
+## Example usage.
