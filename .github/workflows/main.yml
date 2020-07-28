@@ -19,4 +19,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: print the output
-        run: echo "Server IP ${{ steps.fargate.server }}"
+        run: echo "Server IP ${{ steps.fargate.outputs.server }}"
